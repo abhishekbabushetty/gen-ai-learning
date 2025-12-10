@@ -1,20 +1,25 @@
-from langchain_ollama import ChatOllama
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+from dotenv import load_dotenv
 
-model = ChatOllama(model="gemma3:1b")  #use other ollama models 
+load_dotenv()
+
+
+
+models = ChatGoogleGenerativeAI(model = "gemma-3-12b-it")
+
 chat_history = [
-    {"role": "system", "content": "your name is abhishek b shetty and you are a helpful ai agent"}
+    SystemMessage(content = "your name is abhishek b shetty and you are helpfull ai agent")
+
+
 ]
 
+
 while True:
-    user_input = input("You : ")
-
-    if user_input == "exit":
+    a = input("You : ")
+    chat_history.append(HumanMessage(content = a))
+    if(a == "exit"):
         break
-
-    chat_history.append({"role": "user", "content": user_input})
-
-    response = model.invoke(chat_history)
-
-    print("Bot :", response.content)
-
-    chat_history.append({"role": "assistant", "content": response.content})
+    result = models.invoke(chat_history)
+    chat_history.append(AIMessage(result.content))
+    print("Bot : ",result.content)
