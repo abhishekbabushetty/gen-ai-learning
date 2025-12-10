@@ -1,0 +1,136 @@
+# ----------------------------------------------------------------------
+# PYTHON ARTIFACTS
+# ----------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+
+# Distribution / Packaging
+build/
+dist/
+develop-eggs/
+.eggs/
+*.egg-info/
+*.egg
+*.whl
+pip-wheel-metadata/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit Test / Coverage Reports
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.cache
+pytest_cache/
+.pytest_cache/
+.pytype/
+.mypy_cache/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ----------------------------------------------------------------------
+# ENVIRONMENT / CONFIG / SECRETS
+# ----------------------------------------------------------------------
+# Generic env files
+.env
+.env.*
+*.env
+
+# Credentials
+secrets.json
+config.json
+
+# Local SQLite or test databases
+*.db
+*.sqlite3
+
+# ----------------------------------------------------------------------
+# LOGS & OUTPUTS
+# ----------------------------------------------------------------------
+*.log
+logs/
+log/
+output/
+tmp/
+temp/
+*.tmp
+
+# ----------------------------------------------------------------------
+# EDITOR / IDE FILES
+# ----------------------------------------------------------------------
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# ----------------------------------------------------------------------
+# OS GENERATED
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------------------------------------------------
+# DOCKER
+# ----------------------------------------------------------------------
+docker-data/
+docker-compose.override.yml
+
+# ----------------------------------------------------------------------
+# FASTAPI / SERVER SPECIFIC
+# ----------------------------------------------------------------------
+# Cache, sessions, compiled templates
+staticfiles/
+media/
+instance/
+
+# Uvicorn logs
+uvicorn.log
+
+# ----------------------------------------------------------------------
+# FRONTEND (React) ARTIFACTS
+# ----------------------------------------------------------------------
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+build/
+dist/
+
+# Local environment
+*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ----------------------------------------------------------------------
+# MISCE
