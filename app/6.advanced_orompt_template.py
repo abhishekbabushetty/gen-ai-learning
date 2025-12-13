@@ -20,7 +20,7 @@ prompt2 = PromptTemplate(template = "identify key points in {text}",
                         input_variables = ['text'])
 
 
-a2 = prompt.invoke({'text':str(res1.content)})
+a2 = prompt2.invoke({'text':str(res1.content)})
 
 
 res2 = model.invoke(a2)
