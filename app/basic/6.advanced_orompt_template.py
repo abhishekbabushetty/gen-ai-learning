@@ -1,29 +1,27 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_ollama import ChatOllama
+from langchain_core.output_parsers  import StrOutputParser
 
 model = ChatOllama(model="gemma3:1b")
 
 
-prompt = PromptTemplate(template = "write a 4 point summary on {topic}",
+prompt = PromptTemplate(template = "write a brief report on {topic}",
                         input_variables =['topic'])
 
 
 
-a1 = prompt.invoke({'topic' : "Operation sindoor"})
 
 
-
-res1 = model.invoke(a1)
-
-
-prompt2 = PromptTemplate(template = "identify key points in {text}",
+prompt2 = PromptTemplate(template = "write 4  points  from {text}  strictly it should be only 4",
                         input_variables = ['text'])
 
+parser = StrOutputParser()
 
-a2 = prompt2.invoke({'text':str(res1.content)})
+chain =  prompt | model | parser | prompt2 | model | parser
 
 
-res2 = model.invoke(a2)
+result = chain.invoke({"topic":"Deep learning for 3d object reconstrction"})
+print(result)
 
-print(res2.content)
+
 
