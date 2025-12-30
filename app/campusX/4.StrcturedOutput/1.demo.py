@@ -1,18 +1,16 @@
-from langchain_ollama import ChatOllama 
+from typing import TypedDict
 
 
 
-model = ChatOllama(model="gemma3:1b")
+class Person(TypedDict):
+    name : str 
+    age : int 
 
 
+new_person : Person = {"name":"abhishek","age":18}
 
 
-result = model.invoke("design a 1 day travel itinerary for paris give output in stricly json not more not less")
-
-
-print(result.content)
-
-
+print(new_person)
 
 
 
