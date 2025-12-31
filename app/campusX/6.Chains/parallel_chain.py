@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-model1 = ChatGoogleGenerativeAI(model = "gemini-2.5-flash")
+model1 = ChatOllama(model = "gemma3:1b")
 model2 = ChatOllama(model = "gemma3:1b")
 
 pt1 = PromptTemplate(
@@ -74,6 +74,6 @@ The support vector machines in scikit-learn support both dense (numpy.ndarray an
 
 res = chain.invoke({'text' : text})
 
-
+print(res)
 
 
