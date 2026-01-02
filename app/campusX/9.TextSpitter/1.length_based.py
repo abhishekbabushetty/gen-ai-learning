@@ -7,7 +7,7 @@ docs = loader.load()
 
 splitter = CharacterTextSplitter(
     chunk_size=200,
-    chunk_overlap=0,
+    chunk_overlap=10,
     separator=''
 )
 
